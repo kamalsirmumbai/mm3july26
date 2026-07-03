@@ -6,7 +6,11 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/mm", (req, res) => {
-	let messages = [{"all the best": "kamal sir"}, {"do u best" : "prranjal mam"}, {"wow": "sameera"}];
+	let messages = [
+					{"msg":"all the best",  "author":"kamal sir"}, 
+					{"msg":"do u best" , "author":"prranjal mam"}, 
+					{"msg":"wow",  "author":"sameera"}
+				];
 	let r = Math.floor(Math.random() * messages.length);
 	let msg = messages[r];
 	res.send({"msg":msg});
